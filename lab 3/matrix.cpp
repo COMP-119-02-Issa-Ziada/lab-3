@@ -14,7 +14,9 @@
 using namespace std;
 
 /**
- @todo
+ *shows the content of the matrix
+ *@param mat Tthe...
+ *@param maxRow...
  */
 void printMatrix(const double mat[][MAX_COL], const int maxRow)
 {
