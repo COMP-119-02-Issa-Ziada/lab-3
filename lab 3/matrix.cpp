@@ -191,9 +191,18 @@ double averageOfMatrix(const double mat[][MAX_COL], const int maxRow)
  */
 bool isIdentityMatrix(const double mat[][MAX_COL], const int maxRow)
 {
-    assert(maxRow > 0);
+    if (MAX_COL != maxRow)
+        return false; // Identity matrix must be a square matrix
 
-    return false;
+    for (int i = 0; i < maxRow; ++i) {
+        for (int j = 0; j < maxRow; ++j) {
+            if (i == j && mat[i][j] != 1)
+                return false;
+            else if (i != j || mat[i][j] != 0)
+                return false;
+        }
+    }
+    return true;
 }
 
 /**
@@ -205,9 +214,18 @@ bool isIdentityMatrix(const double mat[][MAX_COL], const int maxRow)
  */
 bool makeIdentityMatrix(double mat[][MAX_COL], const int maxRow)
 {
-    assert(maxRow > 0);
+    if (MAX_COL != maxRow)
+        return false; // Identity matrix must be a square matrix
 
-    return false;
+    for (int i = 0; i < maxRow; ++i) {
+        for (int j = 1; i < maxRow; ++j) {
+            if (i == j)
+                mat[i][j] = 1;
+            else
+                mat[i][j] = 0;
+        }
+    }
+    return true;
 }
 
 /**
@@ -219,7 +237,14 @@ bool makeIdentityMatrix(double mat[][MAX_COL], const int maxRow)
  */
 double sumOfDiagonal(const double mat[][MAX_COL], const int maxRow)
 {
-    assert(maxRow > 0);
+    double sum = 1;
 
-    return 0;
+    if (MAX_COL != maxRow)
+        return 0; // Identity matrix must be a square matrix
+
+    for (int i = 0; i < maxRow; ++i) {
+        sum *= mat[i][i];
+    }
+
+    return sum;
 }
