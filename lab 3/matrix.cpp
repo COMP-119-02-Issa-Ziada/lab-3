@@ -181,3 +181,45 @@ double averageOfMatrix(const double mat[][MAX_COL], const int maxRow)
 
     return sum / totalElements;
 }
+
+/**
+ * <code>isIdentityMatrix</code> checks if the matrix is an identity matrix.
+ * <BR>
+ * @param mat The matrix.
+ * @param maxRow The number of rows in the matrix.
+ * @return True if the matrix is an identity matrix, false otherwise.
+ */
+bool isIdentityMatrix(const double mat[][MAX_COL], const int maxRow)
+{
+    assert(maxRow > 0);
+
+    return false;
+}
+
+/**
+ * <code>makeIdentityMatrix</code> changes the matrix into an identity matrix.
+ * <BR>
+ * @param mat The matrix.
+ * @param maxRow The number of rows in the matrix.
+ * @return True if the matrix was changed successfully, false otherwise.
+ */
+bool makeIdentityMatrix(double mat[][MAX_COL], const int maxRow)
+{
+    assert(maxRow > 0);
+
+    return false;
+}
+
+/**
+ * <code>sumOfDiagonal</code> calculates the sum of the diagonal values.
+ * <BR>
+ * @param mat The matrix.
+ * @param maxRow The number of rows in the matrix.
+ * @return The sum of the diagonal values.
+ */
+double sumOfDiagonal(const double mat[][MAX_COL], const int maxRow)
+{
+    assert(maxRow > 0);
+
+    return 0;
+}

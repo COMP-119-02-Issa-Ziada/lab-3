@@ -20,7 +20,6 @@ int printMenu();
  * <BR>
  * @return Returns 0 if success, any other value otherwise.
  */
-
 int main()
 {
     double mat[MAX_ROW][MAX_COL] = {
@@ -50,28 +49,47 @@ int main()
         {
             cout << "\nEnter row number: ";
             cin >> row;
-            cout << "\nSum of row: " << sumOfRow(mat, row, MAX_ROW);
+
+            cout << "\nSum of row: "
+                 << sumOfRow(mat, row, MAX_ROW);
         }
         else if (choice == 4)
         {
             cout << "\nEnter column number: ";
             cin >> column;
-            cout << "\nSum of column: " << sumOfCol(mat, column, MAX_ROW);
+
+            cout << "\nSum of column: "
+                 << sumOfCol(mat, column, MAX_ROW);
         }
         else if (choice == 5)
         {
-            cout << "\nMaximum value: " << findMax(mat, MAX_ROW);
+            cout << "\nMaximum value: "
+                 << findMax(mat, MAX_ROW);
         }
         else if (choice == 6)
         {
-            cout << "\nMinimum value: " << findMin(mat, MAX_ROW);
+            cout << "\nMinimum value: "
+                 << findMin(mat, MAX_ROW);
         }
         else if (choice == 7)
         {
-            cout << "\nAverage value: " << averageOfMatrix(mat, MAX_ROW);
+            cout << "\nAverage value: "
+                 << averageOfMatrix(mat, MAX_ROW);
+        }
+        else if (choice == 8)
+        {
+            cout << "\nIdentity matrix check not implemented yet.";
+        }
+        else if (choice == 9)
+        {
+            cout << "\nMake identity matrix not implemented yet.";
+        }
+        else if (choice == 10)
+        {
+            cout << "\nDiagonal sum not implemented yet.";
         }
 
-    } while (choice != 8);
+    } while (choice != 11);
 
     cout << "\nHave a nice day :)\n";
 
@@ -97,16 +115,20 @@ int printMenu()
         cout << "\n5) Find maximum value";
         cout << "\n6) Find minimum value";
         cout << "\n7) Find average value";
-        cout << "\n8) Exit";
+        cout << "\n8) Check identity matrix";
+        cout << "\n9) Make identity matrix";
+        cout << "\n10) Sum of diagonal";
+        cout << "\n11) Exit";
         cout << "\nEnter choice: ";
+
         cin >> choice;
 
-        if (choice < 1 || choice > 8)
+        if (choice < 1 || choice > 11)
         {
             cout << "\nWrong choice, try again.";
         }
 
-    } while (choice < 1 || choice > 8);
+    } while (choice < 1 || choice > 11);
 
     return choice;
 }

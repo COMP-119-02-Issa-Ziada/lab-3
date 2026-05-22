@@ -24,5 +24,8 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow);
 double findMax(const double mat[][MAX_COL], const int maxRow);
 double findMin(const double mat[][MAX_COL], const int maxRow);
 double averageOfMatrix(const double mat[][MAX_COL], const int maxRow);
+bool isIdentityMatrix(const double mat[][MAX_COL], const int maxRow);
+bool makeIdentityMatrix(double mat[][MAX_COL], const int maxRow);
+double sumOfDiagonal(const double mat[][MAX_COL], const int maxRow);
 
 #endif // MATRIX_H
