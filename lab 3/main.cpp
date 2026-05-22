@@ -27,7 +27,14 @@ int main()
     };
 
     printMatrix(mat, MAX_ROW);
+    
+    cout << "\nSum of row 0: " << sumOfRow(mat, 0, MAX_ROW);
+    cout << "\nSum of column 1: " << sumOfCol(mat, 1, MAX_ROW);
 
+    fillWithRandomNum(mat, MAX_ROW);
+
+    cout << "\n\nRandom matrix:\n";
+    printMatrix(mat, MAX_ROW);
     cout << "\nHave a nice day :)\n";
 
     return 0;
