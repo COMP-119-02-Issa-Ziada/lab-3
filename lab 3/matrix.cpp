@@ -102,3 +102,82 @@ void fillWithRandomNum(double mat[][MAX_COL], const int maxRow)
         }
     }
 }
+
+/**
+ * <code>findMax</code> finds the largest value in the matrix.
+ * <BR>
+ * @param mat The matrix.
+ * @param maxRow The number of rows in the matrix.
+ * @return The largest value in the matrix.
+ */
+double findMax(const double mat[][MAX_COL], const int maxRow)
+{
+    assert(maxRow > 0);
+
+    double maxValue = mat[0][0];
+
+    for (int row = 0; row < maxRow; row++)
+    {
+        for (int column = 0; column < MAX_COL; column++)
+        {
+            if (mat[row][column] > maxValue)
+            {
+                maxValue = mat[row][column];
+            }
+        }
+    }
+
+    return maxValue;
+}
+
+/**
+ * <code>findMin</code> finds the smallest value in the matrix.
+ * <BR>
+ * @param mat The matrix.
+ * @param maxRow The number of rows in the matrix.
+ * @return The smallest value in the matrix.
+ */
+double findMin(const double mat[][MAX_COL], const int maxRow)
+{
+    assert(maxRow > 0);
+
+    double minValue = mat[0][0];
+
+    for (int row = 0; row < maxRow; row++)
+    {
+        for (int column = 0; column < MAX_COL; column++)
+        {
+            if (mat[row][column] < minValue)
+            {
+                minValue = mat[row][column];
+            }
+        }
+    }
+
+    return minValue;
+}
+
+/**
+ * <code>averageOfMatrix</code> calculates the average of all matrix values.
+ * <BR>
+ * @param mat The matrix.
+ * @param maxRow The number of rows in the matrix.
+ * @return The average value of the matrix.
+ */
+double averageOfMatrix(const double mat[][MAX_COL], const int maxRow)
+{
+    assert(maxRow > 0);
+
+    double sum = 0;
+    int totalElements = maxRow * MAX_COL;
+
+    for (int row = 0; row < maxRow; row++)
+    {
+        for (int column = 0; column < MAX_COL; column++)
+        {
+            sum += mat[row][column];
+        }
+    }
+
+    return sum / totalElements;
+}

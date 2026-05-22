@@ -30,11 +30,15 @@ int main()
     
     cout << "\nSum of row 0: " << sumOfRow(mat, 0, MAX_ROW);
     cout << "\nSum of column 1: " << sumOfCol(mat, 1, MAX_ROW);
+    cout << "\nMaximum value: " << findMax(mat, MAX_ROW);
+    cout << "\nMinimum value: " << findMin(mat, MAX_ROW);
+    cout << "\nAverage value: " << averageOfMatrix(mat, MAX_ROW);
 
     fillWithRandomNum(mat, MAX_ROW);
 
     cout << "\n\nRandom matrix:\n";
     printMatrix(mat, MAX_ROW);
+    
     cout << "\nHave a nice day :)\n";
 
     return 0;

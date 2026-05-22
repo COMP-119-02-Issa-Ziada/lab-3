@@ -21,5 +21,8 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
 void fillWithRandomNum(double mat[][MAX_COL], const int maxRow);
 void printMatrix(const double mat[][MAX_COL], const int maxRow);
+double findMax(const double mat[][MAX_COL], const int maxRow);
+double findMin(const double mat[][MAX_COL], const int maxRow);
+double averageOfMatrix(const double mat[][MAX_COL], const int maxRow);
 
 #endif // MATRIX_H
