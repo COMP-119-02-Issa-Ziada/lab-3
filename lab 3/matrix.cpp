@@ -214,6 +214,7 @@ bool isIdentityMatrix(const double mat[][MAX_COL], const int maxRow)
  */
 bool makeIdentityMatrix(double mat[][MAX_COL], const int maxRow)
 {
+    assert(maxRow > 0);
     if (MAX_COL != maxRow)
         return false; // Identity matrix must be a square matrix
 
