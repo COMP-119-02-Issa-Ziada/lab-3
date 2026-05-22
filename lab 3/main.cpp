@@ -13,11 +13,14 @@
 
 using namespace std;
 
+int printMenu();
+
 /**
  * <code>main</code> is the main function of this program.
  * <BR>
  * @return Returns 0 if success, any other value otherwise.
  */
+
 int main()
 {
     double mat[MAX_ROW][MAX_COL] = {
@@ -26,20 +29,84 @@ int main()
         {8, 9, 10, 11}
     };
 
-    printMatrix(mat, MAX_ROW);
-    
-    cout << "\nSum of row 0: " << sumOfRow(mat, 0, MAX_ROW);
-    cout << "\nSum of column 1: " << sumOfCol(mat, 1, MAX_ROW);
-    cout << "\nMaximum value: " << findMax(mat, MAX_ROW);
-    cout << "\nMinimum value: " << findMin(mat, MAX_ROW);
-    cout << "\nAverage value: " << averageOfMatrix(mat, MAX_ROW);
+    int choice;
+    int row;
+    int column;
 
-    fillWithRandomNum(mat, MAX_ROW);
+    do
+    {
+        choice = printMenu();
 
-    cout << "\n\nRandom matrix:\n";
-    printMatrix(mat, MAX_ROW);
-    
+        if (choice == 1)
+        {
+            printMatrix(mat, MAX_ROW);
+        }
+        else if (choice == 2)
+        {
+            fillWithRandomNum(mat, MAX_ROW);
+            cout << "\nMatrix filled with random numbers.";
+        }
+        else if (choice == 3)
+        {
+            cout << "\nEnter row number: ";
+            cin >> row;
+            cout << "\nSum of row: " << sumOfRow(mat, row, MAX_ROW);
+        }
+        else if (choice == 4)
+        {
+            cout << "\nEnter column number: ";
+            cin >> column;
+            cout << "\nSum of column: " << sumOfCol(mat, column, MAX_ROW);
+        }
+        else if (choice == 5)
+        {
+            cout << "\nMaximum value: " << findMax(mat, MAX_ROW);
+        }
+        else if (choice == 6)
+        {
+            cout << "\nMinimum value: " << findMin(mat, MAX_ROW);
+        }
+        else if (choice == 7)
+        {
+            cout << "\nAverage value: " << averageOfMatrix(mat, MAX_ROW);
+        }
+
+    } while (choice != 8);
+
     cout << "\nHave a nice day :)\n";
 
     return 0;
+}
+
+/**
+ * <code>printMenu</code> displays the menu and reads the user's choice.
+ * <BR>
+ * @return The menu choice entered by the user.
+ */
+int printMenu()
+{
+    int choice;
+
+    do
+    {
+        cout << "\n\n===== MATRIX MENU =====";
+        cout << "\n1) Print matrix";
+        cout << "\n2) Fill matrix with random numbers";
+        cout << "\n3) Sum of row";
+        cout << "\n4) Sum of column";
+        cout << "\n5) Find maximum value";
+        cout << "\n6) Find minimum value";
+        cout << "\n7) Find average value";
+        cout << "\n8) Exit";
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        if (choice < 1 || choice > 8)
+        {
+            cout << "\nWrong choice, try again.";
+        }
+
+    } while (choice < 1 || choice > 8);
+
+    return choice;
 }
