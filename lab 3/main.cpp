@@ -1,4 +1,4 @@
-/** \file Lab3.cpp
+/** \file main.cpp
  *  \brief This file contains the main program for a small matrix library.
  *  \details The program tests the matrix library functions.
  *  \author Issa Ziada
@@ -78,15 +78,18 @@ int main()
         }
         else if (choice == 8)
         {
-            cout << "\nIdentity matrix check not implemented yet.";
+            cout << "\nIs identity matrix: "
+                 << isIdentityMatrix(mat, MAX_ROW);
         }
         else if (choice == 9)
         {
-            cout << "\nMake identity matrix not implemented yet.";
+            makeIdentityMatrix(mat, MAX_ROW);
+            cout << "\nMatrix changed to identity matrix.";
         }
         else if (choice == 10)
         {
-            cout << "\nDiagonal sum not implemented yet.";
+            cout << "\nSum of diagonal: "
+                 << sumOfDiagonal(mat, MAX_ROW);
         }
 
     } while (choice != 11);
